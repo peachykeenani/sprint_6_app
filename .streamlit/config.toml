@@ -1,0 +1,7 @@
+[server]
+headless = true
+port = 10001
+
+[browser]
+serverAddress = "localhost"
+serverPort = 10001
