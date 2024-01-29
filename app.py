@@ -11,6 +11,7 @@ df = pd.read_csv('vehicles_us.csv')
     """
 df['manufacturer'] = df['model'].apply(lambda x: x.split()[0])
 
-st.header('Sprint 6 Project', divider='rainbow')
-
-st.write('It is not a functional application yet. Under construction.')
+# Created a text header above the DataFrame.
+st.header('Data viewer', divider='rainbow')
+# Displayed the DataFrame with Streamlit.
+st.dataframe(df)
