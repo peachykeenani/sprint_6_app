@@ -9,6 +9,7 @@ scipy = "*"
 streamlit = "*"
 plotly = "*"
 altair = "*"
+plotly-express = "*"
 
 [dev-packages]
 pytest = "*"
