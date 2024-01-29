@@ -9,6 +9,8 @@ df = pd.read_csv('vehicles_us.csv')
 # Created new column 'manufacturer' 
 # by getting the first word from the 'model' column.
 df['manufacturer'] = df['model'].apply(lambda x: x.split()[0])
+# Replaced all missing values from is_4wd column with 0.
+df['is_4wd'] = df['is_4wd'].fillna(0)
 
 
 # Added project title.
