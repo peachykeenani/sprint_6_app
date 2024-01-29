@@ -23,3 +23,11 @@ st.header('Data viewer')
 # Displayed the DataFrame with Streamlit.
 st.dataframe(df)
 st.divider()
+
+st.header('Vehicle types by manufacturer')
+# Created a Plotly histogram figure.
+fig = px.histogram(df, x='manufacturer',
+                   color='type')
+# Displayed the figure with Streamlit.
+st.write(fig)
+st.divider()
