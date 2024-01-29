@@ -82,7 +82,7 @@ else:
 
 # Created a plotly histogram figure.
 fig = px.histogram(df_filtered,
-                   x='price',
+                   x='price ($)',
                    nbins=30,
                    color='manufacturer',
                    histnorm=histnorm,
