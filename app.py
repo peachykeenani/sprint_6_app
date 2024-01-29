@@ -11,8 +11,8 @@ df = pd.read_csv('vehicles_us.csv')
 df['manufacturer'] = df['model'].apply(lambda x: x.split()[0])
 # Replaced all missing values from 'is_4wd' column with 0.
 df['is_4wd'] = df['is_4wd'].fillna(0)
-# Renamed 'price' column to 'price ($)'.
-df.rename(columns={'price':'price ($)'}, inplace=True)
+# Renamed 'price' column to 'price_$'.
+df.rename(columns={'price':'price_$'}, inplace=True)
 
 
 # Added project title.
@@ -82,7 +82,7 @@ else:
 
 # Created a plotly histogram figure.
 fig = px.histogram(df_filtered,
-                   x='price ($)',
+                   x='price_$',
                    nbins=30,
                    color='manufacturer',
                    histnorm=histnorm,
