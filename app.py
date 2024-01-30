@@ -86,7 +86,20 @@ fig = px.histogram(df_filtered,
                    nbins=30,
                    color='manufacturer',
                    histnorm=histnorm,
-                   barmode='overlay')
+                   barmode='overlay'
+                   )
 # Displayed figure with Streamlit.
+st.write(fig)
+st.divider()
+
+
+# Created a histogram that displays the manufacturers by vehicle condition.
+st.header('Manufacturers by vehicle condition')
+# Created a Plotly histogram figure.
+fig = px.bar(df, x='manufacturer',
+             y='condition',
+             color='condition'
+             )
+# Displayed the figure with Streamlit.
 st.write(fig)
 st.divider()
