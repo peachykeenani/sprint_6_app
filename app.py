@@ -3,6 +3,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import statsmodels as sm
 
 # Loaded the used cars dataset.
 df = pd.read_csv('vehicles_us.csv')
