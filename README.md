@@ -1,6 +1,8 @@
-# Documentation of Used Vehicles application | Sprint 6 Project for TripleTen
+# Documentation of Used Vehicles application | Sprint 6 Project | TripleTen
 ## Hosted on: https://used-vehicles.onrender.com
 
+Please refer to this Github repository: https://github.com/peachykeenani/sprint_6_app
+ 
 This web application explores the dataset `vehicles_us.csv`. This project contains the following visualizations:
 
 - Data viewer

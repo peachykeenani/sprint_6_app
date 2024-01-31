@@ -19,6 +19,7 @@ df.rename(columns={'price':'price_$'}, inplace=True)
 st.title('Sprint 6 Project: Used Vehicles Application')
 # Added a project summary.
 st.write('This software development project explores the vehicles_us.csv dataset.')
+st.write('Follow this link for the Github repository: https://github.com/peachykeenani/sprint_6_app.')
 # Added a divider.
 st.header('', divider='rainbow')
 st.header('')
