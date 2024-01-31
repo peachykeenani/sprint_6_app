@@ -3,7 +3,6 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-import statsmodels as sm
 
 # Loaded the used cars dataset.
 df = pd.read_csv('vehicles_us.csv')
@@ -173,18 +172,20 @@ st.divider()
 
 
 # Created a scatter plot that displays the relationship between days listed and price.
+st.header('Explore relationship between vehicle `price` and `days_listed`')
+
 # Add a checkbox if a user wants to show trendline.
 show_trend_ln = st.checkbox('Show trendline', value=True, key=counter)
 if show_trend_ln:
-    trendline = 'ols'
+    trendline = 'expanding'
 else:
     trendline = None
 
-st.header('Explore relationship between vehicle `price` and `days_listed`')
 # Created a Plotly scatter plot figure.
 fig = px.scatter(df, x='price_$',
                  y='days_listed',
-                 trendline=trendline
+                 trendline=trendline,
+                 trendline_scope='overall'
                  )
 # Displayed the figure with Streamlit.
 st.write(fig)
