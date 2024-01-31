@@ -104,17 +104,23 @@ st.write(fig)
 st.divider()
 
 
-# Created a bar chart of vehicle condition by price.
-st.header('Vehicle condition by price')
-# Created a Plotly bar chart figure.
-fig = px.bar(x='condition',
+# Created a histogram of sales totals by vehicle condition.
+st.header('Total sales by vehicle condition')
+# Created a Plotly histogram figure.
+fig = px.histogram(df, x='condition',
              y='price_$',
-             color='condition'
+             color='condition',
+             # Sorted bar chart by 'condition' in descending order.
+             category_orders={'condition':['excellent',
+                                           'good',
+                                           'like new',
+                                           'fair',
+                                           'new',
+                                           'salvage'
+                                           ]
+                            },
+             labels={'price_$':'sales USD'}
              )
-# Sorted bar chart by 'condition' in descending order.
-fig.update_layout(xaxis={'categoryorder':'array',
-                         'categoryarray':'descending'}
-                )
 # Displayed the figure with Streamlit.
 st.write(fig)
 st.divider()
