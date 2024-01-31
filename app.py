@@ -16,9 +16,9 @@ df.rename(columns={'price':'price_$'}, inplace=True)
 
 
 # Added project title.
-st.title('Sprint 6 Project')
+st.title('Sprint 6 Project: Used Vehicles Application')
 # Added a project summary.
-st.write('This application refers to the vehicles_us.csv dataset.')
+st.write('This software development project explores the vehicles_us.csv dataset.')
 # Added a divider.
 st.header('', divider='rainbow')
 st.header('')
@@ -175,7 +175,7 @@ st.divider()
 st.header('Explore relationship between vehicle `price` and `days_listed`')
 
 # Add a checkbox if a user wants to show trendline.
-show_trend_ln = st.checkbox('Show trendline', value=True, key=counter)
+show_trend_ln = st.checkbox('Show trendline', value=False, key=counter)
 if show_trend_ln:
     trendline = 'expanding'
 else:
