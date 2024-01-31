@@ -74,7 +74,10 @@ mask_filter = (df['manufacturer'] == manufacturer_1) | (df['manufacturer'] == ma
 df_filtered = df[mask_filter]
 
 # Add a checkbox if a user wants to normalize the histogram.
-normalize = st.checkbox('Normalize histogram', value=True)
+# Pass a unique key argument to st.selectbox.
+counter = 0
+normalize = st.checkbox('Normalize histogram', value=True, key=counter)
+counter += 1
 if normalize:
     histnorm = 'percent'
 else:
@@ -168,3 +171,20 @@ st.write(fig)
 st.divider()
 
 
+# Created a scatter plot that displays the relationship between days listed and price.
+# Add a checkbox if a user wants to show trendline.
+show_trend_ln = st.checkbox('Show trendline', value=True, key=counter)
+if show_trend_ln:
+    trendline = 'ols'
+else:
+    trendline = None
+
+st.header('Explore relationship between vehicle `price` and `days_listed`')
+# Created a Plotly scatter plot figure.
+fig = px.scatter(df, x='price_$',
+                 y='days_listed',
+                 trendline=trendline
+                 )
+# Displayed the figure with Streamlit.
+st.write(fig)
+st.divider()
