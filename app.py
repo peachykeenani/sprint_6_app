@@ -124,3 +124,20 @@ fig = px.histogram(df, x='condition',
 # Displayed the figure with Streamlit.
 st.write(fig)
 st.divider()
+
+
+# Created a box plot that compares price distribution of fuel types by vehicle transmissions.
+st.header('Comparing the price distribution of fuel types by vehicle transmissions')
+# Created a Plotly box plot figure.
+fig = px.box(df, x='transmission',
+             y='price_$',
+             color='fuel',
+             points='suspectedoutliers'
+             )
+# Excluded the median to divide the ordered dataset into tow halves.
+fig.update_traces(quartilemethod='exclusive')
+# Displayed the figure with Streamlit.
+st.write(fig)
+st.divider()
+
+
