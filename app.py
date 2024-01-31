@@ -107,10 +107,14 @@ st.divider()
 # Created a bar chart of vehicle condition by price.
 st.header('Vehicle condition by price')
 # Created a Plotly bar chart figure.
-fig = px.bar(df, x='condition',
+fig = px.bar(x='condition',
              y='price_$',
-             color='condition',
+             color='condition'
              )
+# Sorted bar chart by 'condition' in descending order.
+fig.update_layout(xaxis={'categoryorder':'array',
+                         'categoryarray':'descending'}
+                )
 # Displayed the figure with Streamlit.
 st.write(fig)
 st.divider()
