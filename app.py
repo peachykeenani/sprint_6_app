@@ -126,6 +126,18 @@ st.write(fig)
 st.divider()
 
 
+# Created a scatter plot that displays the relationship between vehicle price and condition.
+st.header('Explore relationship between vehicle `price` and `condition`')
+# Created a Plotly scatter plot figure.
+fig = px.scatter(df, x='condition',
+                 y='price_$',
+                 color='condition'
+                 )
+# Displayed the figure with Streamlit.
+st.write(fig)
+st.divider()
+
+
 # Created a box plot that compares price distribution of fuel types by vehicle transmission.
 st.header('Comparing the price distribution of `fuel` types by vehicle `transmission`')
 # Created a Plotly box plot figure.
@@ -154,3 +166,5 @@ fig.update_traces(quartilemethod='exclusive')
 # Displayed the figure with Streamlit.
 st.write(fig)
 st.divider()
+
+
