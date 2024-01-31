@@ -93,12 +93,23 @@ st.write(fig)
 st.divider()
 
 
-# Created a histogram that displays the manufacturers by vehicle condition.
-st.header('Manufacturers by vehicle condition')
+# Created a histogram of vehicle condition by manufacturer.
+st.header('Vehicle condition by manufacturer')
 # Created a Plotly histogram figure.
-fig = px.bar(df, x='manufacturer',
-             y='condition',
-             color='condition'
+fig = px.histogram(df, x='manufacturer',
+                   color='condition'
+                   )
+# Displayed the figure with Streamlit.
+st.write(fig)
+st.divider()
+
+
+# Created a bar chart of vehicle condition by price.
+st.header('Vehicle condition by price')
+# Created a Plotly bar chart figure.
+fig = px.bar(df, x='condition',
+             y='price_$',
+             color='condition',
              )
 # Displayed the figure with Streamlit.
 st.write(fig)
