@@ -126,8 +126,8 @@ st.write(fig)
 st.divider()
 
 
-# Created a box plot that compares price distribution of fuel types by vehicle transmissions.
-st.header('Comparing the price distribution of fuel types by vehicle transmissions')
+# Created a box plot that compares price distribution of fuel types by vehicle transmission.
+st.header('Comparing the price distribution of `fuel` types by vehicle `transmission`')
 # Created a Plotly box plot figure.
 fig = px.box(df, x='transmission',
              y='price_$',
@@ -141,3 +141,16 @@ st.write(fig)
 st.divider()
 
 
+# Created a box plot that compares price distribution of 4WD vs. non-4WD vehicles by transmission.
+st.header('Comparing the price distribution of `is_4wd` vehicles by `transmission`')
+# Created a Plotly box plot figure.
+fig = px.box(df, x='transmission',
+             y='price_$',
+             color='is_4wd',
+             points='suspectedoutliers'
+             )
+# Excluded the median to divide the ordered dataset into tow halves.
+fig.update_traces(quartilemethod='exclusive')
+# Displayed the figure with Streamlit.
+st.write(fig)
+st.divider()
