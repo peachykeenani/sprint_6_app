@@ -9,11 +9,16 @@ df = pd.read_csv('vehicles_us.csv')
 # Created new column 'manufacturer' 
 # by getting the first word from the 'model' column.
 df['manufacturer'] = df['model'].apply(lambda x: x.split()[0])
-# Replaced all missing values from 'is_4wd' column with 0.
+
+# Filled in missing values from the following columns:
+# Replaced missing values from 'model_year'
+# with median year grouped by model
+df['model_year'] = df.groupby('model')['model_year'].fillna(df['model_year'].median())
+# Replaced missing values from 'is_4wd' with 0
 df['is_4wd'] = df['is_4wd'].fillna(0)
+
 # Renamed 'price' column to 'price_$'.
 df.rename(columns={'price':'price_$'}, inplace=True)
-
 
 # Added project title.
 st.title('Sprint 6 Project: Used Vehicles Application')
