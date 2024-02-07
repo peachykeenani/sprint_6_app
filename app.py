@@ -17,8 +17,17 @@ df['model_year'] = df.groupby('model')['model_year'].fillna(df['model_year'].med
 # Replaced missing values from 'cylinders'
 # with median cylinders grouped by model
 df['cylinders'] = df.groupby('model')['cylinders'].fillna(df['cylinders'].median())
+# Replaced missing values from 'odometer'
+# with mean odometer grouped by year and model
+df['odometer'] = df.groupby(['model_year','model'], sort=False)['odometer'].fillna(int(df['odometer'].mean()))
 # Replaced missing values from 'is_4wd' with 0
 df['is_4wd'] = df['is_4wd'].fillna(0)
+
+# Renamed 'price' column to 'price_$'.
+df.rename(columns={'price':'price_$'}, inplace=True)
+
+# Renamed 'price' column to 'price_$'.
+df.rename(columns={'price':'price_$'}, inplace=True)
 
 # Renamed 'price' column to 'price_$'.
 df.rename(columns={'price':'price_$'}, inplace=True)
