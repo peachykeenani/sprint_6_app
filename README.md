@@ -13,6 +13,17 @@ This web application explores the dataset `vehicles_us.csv`. This project contai
 - Price distribution of `4WD` vs. `non-4WD` by `transmission`
 - `Price` and `days listed` distribution
 
+Data Preprocessing: Filled in missing values for the following columns:
+- **model_year**
+    - grouped by 'model'
+    - missing values replaced with `median` of year (==2011==)
+- **cylinders**
+    - grouped by 'model'
+    - missing values replaced with `median` of cylinders (==6==)
+- **odometer**
+    - grouped by 'model_year' and 'model'
+    - missing values replaced with `mean` of odometer as an integer (==115,553==)
+
 *Note* Regarding scatter plots:
 - Trendline is set to `expanding` mean trend.
 - Trendline scope is set to `overall`.
