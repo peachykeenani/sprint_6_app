@@ -14,6 +14,9 @@ df['manufacturer'] = df['model'].apply(lambda x: x.split()[0])
 # Replaced missing values from 'model_year'
 # with median year grouped by model
 df['model_year'] = df.groupby('model')['model_year'].fillna(df['model_year'].median())
+# Replaced missing values from 'cylinders'
+# with median cylinders grouped by model
+df['cylinders'] = df.groupby('model')['cylinders'].fillna(df['cylinders'].median())
 # Replaced missing values from 'is_4wd' with 0
 df['is_4wd'] = df['is_4wd'].fillna(0)
 
